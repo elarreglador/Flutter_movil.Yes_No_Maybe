@@ -15,7 +15,7 @@ migration:
     - platform: root
       create_revision: dbcce277f39facc2ae947145591a7073d31aabae
       base_revision: dbcce277f39facc2ae947145591a7073d31aabae
-    - platform: web
+    - platform: linux
       create_revision: dbcce277f39facc2ae947145591a7073d31aabae
       base_revision: dbcce277f39facc2ae947145591a7073d31aabae
 
