@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:ud5_yes_no_maybe/presentation/widgets/chat/my_message_bubble.dart";
 
 class ChatScreen extends StatelessWidget {
 
@@ -6,9 +7,14 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final colors = Theme.of(context).colorScheme;
+
+
     return Scaffold(
       // AppBar
       appBar: AppBar(
+        backgroundColor: colors.primary, //color primario del tema,
         leading: const Padding(
           padding: EdgeInsets.all(7.0),
           child: CircleAvatar(
@@ -41,7 +47,7 @@ class ChatView extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 100,
                 itemBuilder: (context, index){
-                  return Text("Indice $index");
+                  return const MyMessageBubble();
                 }
               )
             ),

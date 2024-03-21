@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ud5_yes_no_maybe/config/theme/app_theme.dart';
-import 'package:ud5_yes_no_maybe/presentation/chat/chat_screen.dart';
+import 'package:ud5_yes_no_maybe/presentation/screens/chat/chat_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Yes No Maybe',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme( selectedColor:  5 ).theme(), //nuestro theme en config/theme/
+      theme: AppTheme( selectedColor:  2 ).theme(), //nuestro theme en config/theme/
       home: const ChatScreen(), //funcion con el AppBar y el body
     );
   }
