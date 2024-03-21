@@ -13,6 +13,7 @@ const List<Color> _colorThemes = [
   Colors.pink,
 ];
 
+//TEMAS DE COLOR DE NUESTRA APLICACION
 class AppTheme {
   final int selectedColor;
 
