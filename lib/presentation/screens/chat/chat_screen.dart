@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:ud5_yes_no_maybe/presentation/widgets/chat/her_message_bubble.dart";
 import "package:ud5_yes_no_maybe/presentation/widgets/chat/my_message_bubble.dart";
 
 class ChatScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class ChatScreen extends StatelessWidget {
             backgroundImage: NetworkImage('https://cdn.20m.es/img2/recortes/2017/03/14/439263-157-118.jpg'),
           ),
         ),
-        title: const Text("Antonio"),
+        title: const Text("Persona"),
       ),
 
       body: const ChatView(), //funcion con la zona del chat
@@ -47,11 +48,13 @@ class ChatView extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 100,
                 itemBuilder: (context, index){
-                  return const MyMessageBubble();
+                  return ( index % 2 == 0 )
+                    ? const HerMessageBubble()
+                    : const MyMessageBubble();
                 }
               )
             ),
-            const Text("mundo")
+            const Text("Pie de la app")
           ],
         ),
       ),
