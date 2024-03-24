@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:ud5_yes_no_maybe/presentation/screens/shared/message_field_box.dart";
 import "package:ud5_yes_no_maybe/presentation/widgets/chat/her_message_bubble.dart";
 import "package:ud5_yes_no_maybe/presentation/widgets/chat/my_message_bubble.dart";
 
@@ -54,7 +55,8 @@ class ChatView extends StatelessWidget {
                 }
               )
             ),
-            const Text("Pie de la app")
+            // CAJA DE TEXTO
+            const MessageFieldBox()
           ],
         ),
       ),
