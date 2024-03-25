@@ -1,3 +1,4 @@
 {
-    "java.compile.nullAnalysis.mode": "disabled"
+    "java.compile.nullAnalysis.mode": "disabled",
+    "cmake.sourceDirectory": "/home/elarreglador/Escritorio/Cursos/Flutter/Flutter_movil/ud5_yes_no_maybe/linux"
 }
