@@ -1,4 +1,7 @@
 import "package:flutter/material.dart";
+import "package:provider/provider.dart";
+import "package:ud5_yes_no_maybe/domain/entities/message.dart";
+import "package:ud5_yes_no_maybe/presentation/providers/chat_provider.dart";
 import "package:ud5_yes_no_maybe/presentation/screens/shared/message_field_box.dart";
 import "package:ud5_yes_no_maybe/presentation/widgets/chat/her_message_bubble.dart";
 import "package:ud5_yes_no_maybe/presentation/widgets/chat/my_message_bubble.dart";
@@ -40,6 +43,10 @@ class ChatView extends StatelessWidget {
   // ZONA DONDE SE IRAN MOSTRANDO LOS MENSAJES DEL CHAT
   @override
   Widget build(BuildContext context) {
+
+    // Queda pendiente de cambios en el chatProvider
+    final chatProvider = context.watch<ChatProvider>();
+
     return SafeArea( //evita superponerse a controles ios/android
       child: Padding(
         padding: const EdgeInsets.symmetric( horizontal: 20),
@@ -47,12 +54,13 @@ class ChatView extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
-                itemCount: 100,
-                itemBuilder: (context, index){
-                  return ( index % 2 == 0 )
+                itemCount: chatProvider.messageList.length,
+                itemBuilder: (context, index) {
+                  final message = chatProvider.messageList[index];
+                  return (message.fromWho == FromWho.hers)
                     ? const HerMessageBubble()
                     : const MyMessageBubble();
-                }
+                },
               )
             ),
             // CAJA DE TEXTO
