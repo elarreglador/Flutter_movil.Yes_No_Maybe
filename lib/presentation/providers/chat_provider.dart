@@ -6,7 +6,8 @@ class ChatProvider extends ChangeNotifier{
   // LISTA DE MENSAJES QUE APARECEN EN EL CHAT
   List <Message> messageList = [
     Message(text: "hola mundo", fromWho: FromWho.me),
-    Message(text: "ya regresaste?", fromWho: FromWho.me)
+    Message(text: "ya has vuelto?", fromWho: FromWho.me),
+    Message(text: "aun no?", fromWho: FromWho.me)
   ];
 
   
