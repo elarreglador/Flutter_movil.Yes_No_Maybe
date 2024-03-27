@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:ud5_yes_no_maybe/domain/entities/message.dart';
 
 class HerMessageBubble extends StatelessWidget {
-  const HerMessageBubble({super.key});
+
+  final Message message;
+
+  const HerMessageBubble({
+    super.key,
+    required this.message
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +23,11 @@ class HerMessageBubble extends StatelessWidget {
             color: colors.secondary, //color primario del tema
             borderRadius: BorderRadius.circular(20),
           ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Text(
-              'Sunt amet nulla ad laborum sint do do velit aliqua laborum.', 
-              style: TextStyle(
+              message.text, 
+              style: const TextStyle(
                 color: Colors.white
               ),),
           )
@@ -29,7 +36,7 @@ class HerMessageBubble extends StatelessWidget {
         // Separador entre mensajes
         const SizedBox(height: 10),
 
-        const _ImageBubble()
+        _ImageBubble(message.imageUrl ?? '')
       ],
     );
   }
@@ -37,7 +44,10 @@ class HerMessageBubble extends StatelessWidget {
 
 
 class _ImageBubble extends StatelessWidget {
-  const _ImageBubble({super.key});
+  
+  final String imageUrl;
+
+  const _ImageBubble( this.imageUrl );
 
   @override
   Widget build(BuildContext context){
@@ -45,7 +55,7 @@ class _ImageBubble extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
-        'https://yesno.wtf/assets/no/20-56c4b19517aa69c8f7081939198341a4.gif',
+        imageUrl,
         height: 150,
         fit: BoxFit.cover,
         loadingBuilder: (context, child, loadingProgress) {
